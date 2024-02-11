@@ -3,7 +3,8 @@ import { MdArrowOutward } from "react-icons/md";
 import Linkedin from "../assets/images/linkedin.jpg";
 import Github from "../assets/images/text-image.png";
 import Twitter from "../assets/images/twitter.jpg";
-
+import { fadeIn } from "../variants.js";
+import { motion } from "framer-motion";
 function Profiles() {
   return (
     <div
@@ -14,7 +15,13 @@ function Profiles() {
         Socials
       </h1>
       <div className=" sm:flex sm:gap-5 items-center ">
-        <div className="sm:mb-0 mb-5 cardcontainer sm:h-[50vh] h-[30vh] sm:w-1/2">
+        <motion.div
+          variants={fadeIn("right", 0.3)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          className="sm:mb-0 mb-5 cardcontainer sm:h-[50vh] h-[30vh] sm:w-1/2"
+        >
           <div className="relative card rounded-xl w-full h-full flex items-center justify-center overflow-hidden">
             <img src={Github} alt="profile" className="w-full h-full" />
             <div className="contact-me flex items-center gap-3 absolute left-8 bottom-4">
@@ -30,8 +37,14 @@ function Profiles() {
               </a>
             </div>
           </div>
-        </div>
-        <div className="sm:flex sm:gap-5 cardcontainer sm:h-[50vh] sm:w-1/2">
+        </motion.div>
+        <motion.div
+          variants={fadeIn("left", 0.2)}
+          initial="hidden"
+          whileInView={"show"}
+          viewport={{ once: false, amount: 0.3 }}
+          className="sm:flex sm:gap-5 cardcontainer sm:h-[50vh] sm:w-1/2"
+        >
           <div className="sm:mb-0 mb-5 relative card rounded-xl w-full h-full flex items-center justify-center overflow-hidden">
             {" "}
             <img src={Linkedin} alt="profile" className="w-full h-full" />
@@ -63,7 +76,7 @@ function Profiles() {
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

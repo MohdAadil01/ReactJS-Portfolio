@@ -2,9 +2,14 @@ import React from "react";
 import Image from "../assets/images/text-image.png";
 import { MdArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
+import { fadeIn } from "../variants.js";
 function Home() {
   return (
-    <div
+    <motion.div
+      variants={fadeIn("up", 0.6)}
+      initial="hidden"
+      whileInView={"show"}
+      viewport={{ once: false, amount: 0.7 }}
       id="Home"
       data-scroll
       data-scroll-section
@@ -59,7 +64,7 @@ function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

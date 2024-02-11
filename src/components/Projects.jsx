@@ -2,6 +2,7 @@ import React from "react";
 import { GoDotFill } from "react-icons/go";
 import { MdArrowOutward } from "react-icons/md";
 import { motion, useAnimate, useAnimation } from "framer-motion";
+import { fadeIn } from "../variants.js";
 
 import Gaming from "../assets/images/gaming.png";
 import Food from "../assets/images/food.png";
@@ -31,6 +32,10 @@ function Projects() {
       <div className="sm:px-20 px-6">
         <div className="cards w-full flex flex-col sm:flex-row sm:gap-10 mt-10 gap-[8rem]">
           <motion.div
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
             onHoverStart={() => handlerHover(0)}
             onHoverEnd={() => handlerHoverEnd(0)}
             className="cardcontainer relative sm:w-1/2 sm:h-[75vh] h-[23vh] w-[39vh]"
@@ -88,6 +93,10 @@ function Projects() {
             </div>
           </motion.div>
           <motion.div
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
             onHoverStart={() => handlerHover(1)}
             onHoverEnd={() => handlerHoverEnd(1)}
             className="cardcontainer relative sm:w-1/2 sm:h-[75vh] h-[23vh] w-[39vh]"
@@ -144,6 +153,10 @@ function Projects() {
         </div>
         <div className="cards w-full flex flex-col sm:flex-row sm:gap-10 sm:mt-[10rem] mt-[8rem] gap-[8rem]">
           <motion.div
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
             onHoverStart={() => handlerHover(2)}
             onHoverEnd={() => handlerHoverEnd(2)}
             className="cardcontainer relative sm:w-1/2 sm:h-[75vh] h-[23vh] w-[39vh]"
@@ -201,6 +214,10 @@ function Projects() {
             </div>
           </motion.div>
           <motion.div
+            variants={fadeIn("left", 0.2)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
             onHoverStart={() => handlerHover(3)}
             onHoverEnd={() => handlerHoverEnd(3)}
             className="cardcontainer relative sm:w-1/2 sm:h-[75vh] h-[23vh] w-[39vh]"
